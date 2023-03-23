@@ -1,6 +1,31 @@
-import React from "react";
-import List from './components/List';
+import axios from 'axios'
+import React,{useState, useEffect} from 'react';
+
+import {List, AddList , Tasks} from './components'
+
+
 function App() {
+  const [lists , setLists] = useState(null);
+  const[colors,setColors] =useState(null);
+  const[activeItem, setActiveItem] = useState(null);
+  
+  useEffect(() => {
+    axios
+      .get('http://localhost:3001/lists?_expand=color&_embed=tasks')
+      .then(({ data }) => {
+        setLists(data);
+      });
+    axios.get('http://localhost:3001/colors').then(({ data }) => {
+      setColors(data);
+    });
+  }, []);
+
+  const onAddList = obj => {
+    //get all data from db.json.lists and push new data
+    const newLists = [...lists,obj];
+    setLists(newLists);
+  };
+
   return (
     <div className="todo"> 
     <div className="todo__sidebar">
@@ -23,35 +48,27 @@ function App() {
       },
     ]} 
     />
+    {lists ? (
     <List 
-      items={[{
-        color: "green",
-        name: 'Purchases'
-      },
-      {
-        color: "blue",
-        name: 'Frontend'
-      },
-      {
-        color: "pink",
-        name: 'Movies and TV series '
-      }
-    ]}
-    isRemovable={true}
+      items={lists}
+      onRemove={id =>{
+        const newLists = lists.filter(item => item.id !== id)
+       setLists(newLists);
+      }}
+      onClickItem={item =>{
+        setActiveItem(item);
+      }}
+    activeItem={activeItem}
+    isRemovable
     />
-    <List 
-      items={[{
-        icon: <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 1V15" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <path d="M1 8H15" stroke="black" strokeWidth="2" strokeLlinecap="round" strokeLinejoin="round"/>
-        </svg>,
-        name: 'Add List'
-      },
-    ]}
-    
-    />
+    ) :(
+      'Loading'
+    )}
+ <AddList onAdd={onAddList} colors={colors} />
       </div>
-     <div className="todo__tasks"></div>
+     <div className="todo__tasks">
+      {lists && <Tasks list={lists[1]} />}
+     </div>
     </div>
   );
 }

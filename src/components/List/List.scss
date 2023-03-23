@@ -1,14 +1,48 @@
 .list{
+  $self: &;
+
     margin-bottom: 25px;
+
+    &__add-button{
+          opacity: 0.6;
+      &:hover{
+          opacity: 1;
+  }
+}
     li{
     display: flex;
     align-items: center;
     padding:10px 12px;
     cursor: pointer;
+
+     &:hover #{$self}__remove-icon {
+        opacity: 0.2;
+      }
+      #{$self}__remove-icon{
+        opacity: 0;
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+
+    span{
+      flex:1;
+      text-overflow:ellipsis;
+      overflow: hidden;
+      width: 160px;
+      white-space: nowrap;
+    }
     &.active {
       background: #FFFFFF;
     box-shadow: 0px 3px 5px rgba(0,0,0,0.04);
     border-radius: 4px;
+  }
+  &:hover{
+    background: rgba(255,255,255,0.5);
+  }
+  .badge{
+    position: relative;
+    left: 5px;
   }
     }
     i{
@@ -17,25 +51,7 @@
       svg{
         path{
           fill:#7c7c7c;
-          
         }
-      }
-      .badge{
-        width: 10px;
-        height: 10px;
-        border-radius: 30px;
-        position: relative;
-        left: 5px;
-
-        &--green{
-        background-color: #42b883;
-        }
-        &--blue{
-            background-color: #64c4ed;
-        }
-        &--pink{
-            background-color: #ffbbcc;
-        }
-      }
     }
   }
+}

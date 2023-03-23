@@ -2,7 +2,7 @@
   "lists": [
     {
       "id": 1,
-      "name": "Sels",
+      "name": "Sales",
       "colorId": 5
     },
     {
@@ -12,47 +12,32 @@
     },
     {
       "id": 3,
-      "name": "Movies and TV Series",
+      "name": "Movies",
       "colorId": 3
     },
     {
       "id": 4,
-      "name": "Book",
+      "name": "Books",
       "colorId": 2
-    },
-    {
-      "id": 5,
-      "name": "Private",
-      "colorId": 1
-    },
-    {
-      "name": "Sport",
-      "colorId": 3,
-      "id": 6
-    },
-    {
-      "name": "Todo App",
-      "colorId": 7,
-      "id": 7
     }
   ],
   "tasks": [
     {
       "id": 1,
       "listId": 2,
-      "text": "learn javascript",
+      "text": "Learn JavaScript",
       "completed": true
     },
     {
       "id": 2,
       "listId": 2,
-      "text": "learn programming paterns",
+      "text": "data",
       "completed": false
     },
     {
       "id": 3,
       "listId": 2,
-      "text": "ReactJS Hooks (useState, useReducer, useEffect.)",
+      "text": "ReactJS Hooks (useState, useReducer, useEffect)",
       "completed": true
     },
     {
@@ -93,7 +78,7 @@
     },
     {
       "listId": 4,
-      "text": "Buy 1984!",
+      "text": " 1984!",
       "completed": true,
       "id": 10
     },
@@ -102,30 +87,6 @@
       "text": "222",
       "completed": true,
       "id": 12
-    },
-    {
-      "listId": 7,
-      "text": "Create sidebar",
-      "completed": true,
-      "id": 15
-    },
-    {
-      "listId": 7,
-      "text": "create todo app",
-      "completed": true,
-      "id": 16
-    },
-    {
-      "listId": 7,
-      "text": "Some fixes",
-      "completed": true,
-      "id": 17
-    },
-    {
-      "listId": 8,
-      "text": "tttt",
-      "completed": false,
-      "id": 18
     }
   ],
   "colors": [
