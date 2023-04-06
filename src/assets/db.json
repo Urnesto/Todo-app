@@ -19,6 +19,11 @@
       "id": 4,
       "name": "Books",
       "colorId": 2
+    },
+    {
+      "name": "React",
+      "colorId": 6,
+      "id": 5
     }
   ],
   "tasks": [
@@ -81,6 +86,24 @@
       "text": "qwqw",
       "completed": false,
       "id": 10
+    },
+    {
+      "listId": 1,
+      "text": "saas",
+      "completed": false,
+      "id": 11
+    },
+    {
+      "listId": 5,
+      "text": "Redux",
+      "completed": false,
+      "id": 12
+    },
+    {
+      "listId": 5,
+      "text": "Redux",
+      "completed": false,
+      "id": 13
     }
   ],
   "colors": [
