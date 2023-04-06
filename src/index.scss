@@ -37,6 +37,7 @@ body {
 
 
 .button{
+  font-size: 14px;
   background-color: #4dd599;
   border-radius: 4px;
   color: #fff;
@@ -50,6 +51,16 @@ body {
   &:active{
     background-color: darken(#4dd599, 10%);
   }
+  &--grey{
+    background-color: #F4F6F8;
+    color: #444444;
+    &:hover {
+      background-color: darken(#F4F6F8 , 3%)
+    }
+    &:active{
+      background-color: darken(#F4F6F8 , 6%)
+    }
+  }
 }
 .field {
   background: #ffffff;
@@ -57,6 +68,7 @@ body {
   box-sizing: border-box;
   border-radius: 4px;
   padding: 8px 12px;
+  font-size: 14px;
   width: 100%;
   &:focus{
     border-color: #dbdbdb;

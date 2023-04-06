@@ -22,7 +22,7 @@ return(
         // if item is active in app.js file (<List>) than active is assigned for li
     <li
      key = {index}  
-     className={classNames(item.className, {'active' : item.active})}
+     className={classNames(item.className, {active :activeItem && activeItem.id === item.id})}
         onClick={onClickItem ? () => onClickItem(item) : null}
         >
         <i>

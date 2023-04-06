@@ -37,6 +37,8 @@ const addList = () => {
   const listObj = {...data , color: {name: color}};
   onAdd(listObj);
   onClose();
+  }).catch(e => {
+    alert('Error');
   }).finally(() => {
     setIsLoading(false);
   });
